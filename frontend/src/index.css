@@ -1,0 +1,190 @@
+
+* {
+
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  /* transition: .2s linear; */
+}
+
+html {
+  font-size: 80%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+
+
+}
+
+html::-webkit-scrollbar {
+  width: 0rem;
+
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: .5rem;
+
+}
+
+.container {
+height: 100vh;
+  width: 100vw;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0rem;
+  gap: 2rem;
+}
+.tittle{
+  width: 100%;
+position: absolute;
+top: 0;
+text-align: center;
+padding: 3rem;
+}
+.tittle h1{
+  
+
+  font-size: 4rem;
+  font-family: 'Rubik Scribble',sans-serif;
+}
+
+.box{
+  overflow: hidden;
+  width:25%;
+  max-height: 90%;
+  background: rgba(255, 255, 255, 0.212);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 2rem;
+gap: 1rem;
+}
+.box .btn{
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+.box .btn button{
+  width: 45%;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background: transparent;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+font-weight: 600;
+color: white;
+}
+h4{
+  font-size: 1.5rem;
+}
+.box .btn .btnback{
+  background: #4158D0;
+  background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%); 
+}
+
+.ownername{
+  position: absolute;
+  bottom: 0;
+  padding: 4rem;
+  text-decoration: none;
+  color: white;
+}
+.ownername a{
+  color: white;
+}
+.inputpart{
+  width: 100%;
+}
+.signuppart{
+  width: 100%;
+  margin-top: 2rem;
+}
+.loginpart{
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.signupform{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+}
+.form-group{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  position: relative;
+}
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: .2rem solid white;
+  border-radius: .5rem;
+  color: white;
+  text-transform: none;
+}
+.signupform .submitbtn{
+   width: 45%;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.233);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+font-weight: 600;
+color: white;
+margin-top: 2rem;
+transition: 0.3s ease;
+}
+.signupform .submitbtn:hover {
+  transition: 0.3s ease;
+  background: #4158D0;
+  background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%); 
+}
+
+.form-group .eyebtn{
+  position: absolute;
+  top: 2.9rem;
+  right: 2.5rem;
+  cursor: pointer;
+  background-color: yellow;
+}
+.form-group .eyebtn i{
+position: absolute;
+color: white;
+}
+
