@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Signup from '../Components/Auth/Signup'
 import Login from '../Components/Auth/Login'
 
-function Home() {
+function Home(props) {
+  const {showalert} = props
   const [login, setlogin] = useState(true)
   const [signup, setsignup] = useState(false)
   const [btnlogin ,setbtnlogin] = useState("btnback")
@@ -17,8 +18,8 @@ function Home() {
           <button className={`signup ${btnsignup}`} onClick={() => { setlogin(false); setsignup(true); setbtnlogin(""); setbtnsignup("btnback") }}>Signup</button>
         </div>
         <div className="inputpart">
-          {login && <div className="loginpart" ><Login/></div>}
-          {signup && <div className="signuppart" ><Signup/></div>}
+          {login && <div className="loginpart" ><Login showalert = {showalert} /></div>}
+          {signup && <div className="signuppart" ><Signup showalert = {showalert}/></div>}
         </div>
       </div>
      <p className='ownername'>made by <a href="https://github.com/DevelopWithAyush">developWithAyush </a></p> 

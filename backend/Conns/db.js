@@ -1,10 +1,9 @@
 const mongoose = require('mongoose')
 
 
-mongoose.connect('mongodb+srv://developwithdubey:ayushdubey@cluster0.ychgzs3.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb://127.0.0.1:27017/baat-chit')
 .then(()=>{
     console.log("Connection successful")
-}).catch((error)=>{
-    console.log(`not connect ${error.message}`)
+}).catch(()=>{
+    console.log("not connect")
 })
-

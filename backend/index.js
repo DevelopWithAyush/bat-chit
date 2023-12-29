@@ -5,10 +5,15 @@ const socketIO = require('socket.io')
 const cors = require('cors')
 const server = http.createServer(app);
 require("./Conns/db.js")
+require('dotenv').config();
 
-const port = 5000 || process.env.PORT;
+const port =  process.env.PORT || 5000;
 // connectDB()
 const io = socketIO(server);
+app.use(cors());
+app.use(express.json());
+app.use("/api/auth",require("./routers/user.js"))
+app.use("/api/chat",require("./routers/chatRoutes.js"))
 
 
 

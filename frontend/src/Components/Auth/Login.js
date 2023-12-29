@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
-    const [formData, setFormData] = useState({
+function Login(props) {
+  const {showalert} = props;
+  const navigate = useNavigate()
+     const [formData, setFormData] = useState({
         email: '',
         password: '',
     });
@@ -14,8 +17,37 @@ function Login() {
         }));
     };
 
+    const login = async (email, password) => {
+        try {
+          const response = await fetch("http://localhost:5000/api/auth/login", {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email,
+              password,
+            }),
+          });
+      
+          if (response.ok) {
+            const jsonResponse = await response.json();
+            console.log("Signup successful:", jsonResponse);
+            showalert("success","successfully sign up ")
+            navigate("/chat")
+
+            
+          } else {
+            showalert("error","Signup failed.")}
+        } catch (error) {
+
+          showalert("error","Signup failed.")
+        }
+      };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        login(formData.email,formData.password)
         // Add your sign-up logic here
         console.log('Form submitted with data:', formData);
     };
@@ -63,7 +95,7 @@ setShow(!show)
                 
             </div>
 
-            <button type="submit" className='submitbtn'>submit</button>
+            <button type="submit" className='submitbtn' >submit</button>
         </form>
 
     );

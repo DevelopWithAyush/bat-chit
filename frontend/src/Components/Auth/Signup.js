@@ -1,6 +1,9 @@
 import React,{useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 
-function Signup() {
+function Signup(props) {
+  const {showalert} = props;
+  const navigate = useNavigate()
     const [formData, setFormData] = useState({
         userName: '',
         Name: '',
@@ -16,8 +19,37 @@ function Signup() {
         }));
       };
     
-      const handleSubmit = (e) => {
+      const signup = async (userName, name, email, password) => {
+        try {
+          const response = await fetch("http://localhost:5000/api/auth/createuser", {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userName,
+              name,
+              email,
+              password,
+            }),
+          });
+      
+          if (response.ok) {
+            showalert("success","successfully sign up ")
+            navigate("/chat")
+
+          } else {
+            showalert("error", "login falied")
+          }
+        } catch (error) {
+          showalert("error", "login falied")
+        }
+      };
+      
+      const handleSubmit = async(e) => {
         e.preventDefault();
+       signup(formData.userName,formData.Name,formData.email,formData.password)
+
         // Add your sign-up logic here
         console.log('Form submitted with data:', formData);
       };
@@ -77,11 +109,11 @@ setShow(!show)
                 onChange={handleChange}
                 required
               />
-               <button className='eyebtn' onClick={handleontoggle}>
+               <div className='eyebtn' onClick={handleontoggle}>
                 {show?<i class="fa-solid fa-eye" ></i>:<i class="fa-solid fa-eye-slash"></i>
 
 }    
-                </button>
+                </div>
             </div>
     
             <button type="submit" className='submitbtn'>submit</button>

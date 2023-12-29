@@ -1,0 +1,27 @@
+
+
+.alertcont{
+    width: 30vw;
+    display: flex;
+    padding: 1.5rem 5%;
+    font-size: 1.2rem ;
+    position: absolute;
+    font-weight: bold;
+    color: white;
+    z-index: 100000;
+    top:8rem;
+    right: 3rem ;
+    align-items: center;
+    border-radius: 2rem;
+    /* margin-top: 3rem; */
+
+}
+.error{
+background: rgb(255, 0, 0);
+
+
+}
+.success{
+background: green;
+
+}
